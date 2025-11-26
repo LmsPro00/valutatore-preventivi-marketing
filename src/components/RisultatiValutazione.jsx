@@ -91,12 +91,20 @@ export default function RisultatiValutazione({ data, onBack }) {
       });
     }
     
-    const numeroRiunioni = parseInt(data.numeroRiunioni) || 0;
-    if (numeroRiunioni < 2) {
+    const numeroRiunioni = parseInt(data.numeroRiunioni);
+    if (!isNaN(numeroRiunioni) && numeroRiunioni < 2) {
       criticita.push({
         categoria: 'Risorse',
         titolo: 'Scarso Coinvolgimento',
-        descrizione: `Solo ${numeroRiunioni} riunioni al mese. L'agenzia dedicherà poco tempo al tuo progetto, trattandolo come uno dei tanti.`,
+        descrizione: `Solo ${numeroRiunioni} riunione/i al mese. L'agenzia dedicherà poco tempo al tuo progetto, trattandolo come uno dei tanti.`,
+        gravita: 'media',
+        icon: Users
+      });
+    } else if (!data.numeroRiunioni || data.numeroRiunioni === '') {
+      criticita.push({
+        categoria: 'Risorse',
+        titolo: 'Frequenza Riunioni Non Specificata',
+        descrizione: 'Non è stato specificato quante riunioni mensili sono previste. Questo può indicare scarsa attenzione al coinvolgimento del cliente.',
         gravita: 'media',
         icon: Users
       });
