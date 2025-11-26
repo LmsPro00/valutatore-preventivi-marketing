@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertCircle, CheckCircle, XCircle, TrendingUp, Shield, Users, Target, BarChart3, ArrowLeft, FileText, Download } from 'lucide-react';
+import { AlertCircle, CheckCircle, XCircle, TrendingUp, Shield, Users, Target, BarChart3, ArrowLeft, FileText, Download, DollarSign } from 'lucide-react';
 
 export default function RisultatiValutazione({ data, onBack }) {
   // Analizza i dati per identificare le criticità
@@ -70,12 +70,28 @@ export default function RisultatiValutazione({ data, onBack }) {
       });
     }
     
-    if (data.clausolaUscita === 'penale' || data.clausolaUscita === 'difficile') {
+    if (data.clausolaUscita === 'penale_uscita') {
       criticita.push({
         categoria: 'Clausole Contrattuali',
-        titolo: 'Clausola di Uscita Penalizzante',
-        descrizione: 'Uscire dal contratto comporta penali o è molto difficile. Sei intrappolato in un rapporto che potrebbe non funzionare.',
+        titolo: 'Penale di Uscita Prevista',
+        descrizione: 'Uscire dal contratto comporta penali economiche. Sei vincolato anche se non sei soddisfatto dei risultati.',
         gravita: 'alta',
+        icon: AlertCircle
+      });
+    } else if (data.clausolaUscita === 'vincolata_12_mesi') {
+      criticita.push({
+        categoria: 'Clausole Contrattuali',
+        titolo: 'Vincolo Contrattuale di 12 Mesi',
+        descrizione: 'Sei vincolato per 12 mesi. Anche se i risultati non arrivano, non puoi uscire facilmente dal contratto.',
+        gravita: 'alta',
+        icon: AlertCircle
+      });
+    } else if (data.clausolaUscita === 'vincolata_6_mesi') {
+      criticita.push({
+        categoria: 'Clausole Contrattuali',
+        titolo: 'Vincolo Contrattuale di 6 Mesi',
+        descrizione: 'Sei vincolato per 6 mesi. Questo limita la tua flessibilità se i risultati non sono soddisfacenti.',
+        gravita: 'media',
         icon: AlertCircle
       });
     }
@@ -111,11 +127,19 @@ export default function RisultatiValutazione({ data, onBack }) {
     }
     
     // Analisi Reportistica
-    if (data.frequenzaReport === 'trimestrale' || data.frequenzaReport === 'mensile') {
+    if (data.frequenzaReport === 'trimestrale') {
       criticita.push({
         categoria: 'Monitoraggio',
         titolo: 'Reportistica Insufficiente',
-        descrizione: 'Report troppo radi non permettono di intervenire tempestivamente. Scoprirai i problemi quando è troppo tardi.',
+        descrizione: 'Report trimestrali sono troppo radi. Non permettono di intervenire tempestivamente sui problemi.',
+        gravita: 'alta',
+        icon: BarChart3
+      });
+    } else if (data.frequenzaReport === 'mensile') {
+      criticita.push({
+        categoria: 'Monitoraggio',
+        titolo: 'Reportistica Poco Frequente',
+        descrizione: 'Report mensili potrebbero non essere sufficienti per ottimizzazioni rapide. Report settimanali o bisettimanali sono più efficaci.',
         gravita: 'media',
         icon: BarChart3
       });
@@ -165,7 +189,7 @@ export default function RisultatiValutazione({ data, onBack }) {
   
   const budget = parseFloat(data.budgetTotale) || 0;
   const durataContratto = parseFloat(data.durataContratto) || 12;
-  const costoMensile = budget / durataContratto;
+  const costoMensile = durataContratto > 0 ? budget / durataContratto : 0;
   
   const handleDownloadReport = () => {
     const reportText = `
