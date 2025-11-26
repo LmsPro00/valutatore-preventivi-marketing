@@ -380,36 +380,36 @@ Report generato il ${new Date().toLocaleDateString('it-IT')}
           <div className="space-y-4">
             <h4 className="text-xl font-bold text-blue-200">🎯 Perché Scegliere l'Autonomia</h4>
             
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
-              <h5 className="font-bold text-lg mb-2 text-green-300">✓ Controllo Totale della Strategia</h5>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-5 border border-white/10">
+              <h5 className="font-bold text-base md:text-lg mb-2 text-green-300 break-words">✓ Controllo Totale della Strategia</h5>
               <p className="text-blue-50 leading-relaxed">
                 Con competenze interne, sei tu a decidere priorità, budget e direzione. Nessuna dipendenza da terzi per modifiche o ottimizzazioni.
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
-              <h5 className="font-bold text-lg mb-2 text-green-300">✓ Conoscenza Profonda del Tuo Business</h5>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-5 border border-white/10">
+              <h5 className="font-bold text-base md:text-lg mb-2 text-green-300 break-words">✓ Conoscenza Profonda del Tuo Business</h5>
               <p className="text-blue-50 leading-relaxed">
                 Un team interno vive il tuo prodotto ogni giorno. Comprende sfumature, valori e obiettivi che un'agenzia esterna non potrà mai cogliere appieno.
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
-              <h5 className="font-bold text-lg mb-2 text-green-300">✓ Formazione dell'Imprenditore</h5>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-5 border border-white/10">
+              <h5 className="font-bold text-base md:text-lg mb-2 text-green-300 break-words">✓ Formazione dell'Imprenditore</h5>
               <p className="text-blue-50 leading-relaxed">
                 Come imprenditore, formarti sul marketing ti permette di gestirlo in autonomia e, se deciderai di delegarlo in futuro, sarai in grado di verificare il lavoro svolto. Non dipenderai più da chi "dice di fare", ma saprai esattamente cosa viene fatto e perché.
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
-              <h5 className="font-bold text-lg mb-2 text-green-300">✓ Proprietà di Dati e Contenuti</h5>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-5 border border-white/10">
+              <h5 className="font-bold text-base md:text-lg mb-2 text-green-300 break-words">✓ Proprietà di Dati e Contenuti</h5>
               <p className="text-blue-50 leading-relaxed">
                 Tutto ciò che crei rimane tuo: dati, insights, contenuti, strategie. Costruisci un patrimonio aziendale invece di dipendere da asset esterni.
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-5 border border-white/10">
-              <h5 className="font-bold text-lg mb-2 text-green-300">✓ Agilità e Velocità di Esecuzione</h5>
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-5 border border-white/10">
+              <h5 className="font-bold text-base md:text-lg mb-2 text-green-300 break-words">✓ Agilità e Velocità di Esecuzione</h5>
               <p className="text-blue-50 leading-relaxed">
                 Niente più attese per approvazioni o modifiche. Il tuo team può testare, iterare e ottimizzare in tempo reale, cogliendo opportunità di mercato.
               </p>
